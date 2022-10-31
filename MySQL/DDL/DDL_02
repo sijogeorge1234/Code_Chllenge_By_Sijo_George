@@ -1,1 +1,47 @@
+create database test;
+use test;
+create table t_agent(
+agent_id varchar(25) primary key,
+agent_name varchar(50),
+agent_email varchar(50),
+agent_city varchar(100),
+agent_phone decimal(15,0),
+TARGET_POLICY_SUM DECIMAL(15,0)
+);
+create table t_member(
+member_id varchar(25) primary key,
+member_name varchar(100),
+member_email varchar(100),
+member_city varchar(100),
+member_phone decimal(10,0),
+agent_id varchar(100),
+policy_id varchar(100)
+);
+create table t_policy(
+policy_id varchar(25) primary key,
+policy_name varchar(100),
+agent_id varchar(25),
+policy_type varchar(100),
+policy_sum decimal(10,0),
+policy_status varchar(100),
+policy_tenure decimal(5,0)
+);
 
+alter table t_member
+add foreign key(agent_id)references t_agent(agent_id),
+add foreign key(policy_id)references t_policy(policy_id);
+
+insert  into t_agent values('M101', 'Banu', 'gggg@g', 'pune', 123, 2000);
+insert  into t_agent values('O102', 'Banu', 'gggg@g', 'chennai', 123, 100);
+insert  into t_agent values('Z103', 'Banu', 'gggg@g', 'pune', 123, 2000);
+insert  into t_agent values('P104', 'Banu', 'gggg@g', 'pune', 123, 2000);
+select * from t_agent;
+
+update t_agent
+set TARGET_POLICY_SUM =
+	case agent_city 
+	when 'pune' then 4000000 when 'chennai' then 2500000
+	else TARGET_POLICY_SUM
+end
+where agent_id like 'm%';
+select * from t_agent;
