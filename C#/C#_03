@@ -1,1 +1,67 @@
+using System;
+public class CC
+{
+    public static void Main(String[] Args)
+    {
+        Console.WriteLine("Total Students Placed in CS: ");
+        int CS= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Total Students Placed in MECH: ");
+        int MECH = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Total Students Placed in MET: ");
+        int MET = Convert.ToInt32(Console.ReadLine());
+         if(CS>MECH)
+            {
+                if(CS>MET)
+                {
+                    Console.WriteLine("Highest placement CS");
+                }
+                else if(CS==MET)
+                {
+                    Console.WriteLine("Highest placement CS");
+                    Console.WriteLine("Highest placement MET");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement MET");
+                }
+                
+            }
+            else if(MECH>CS)
+            {
+                if (MECH > MET)
+                {
+                    Console.WriteLine("Highest placement MECH");
+                }
+                else if (MECH == MET)
+                {
+                    Console.WriteLine("Highest placement MECH");
+                    Console.WriteLine("Highest placement MET");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement MET");
+                }
+            }
+            else
+            {
+                if (MECH > MET)
+                {
+                    Console.WriteLine("Highest placement CS");
+                    Console.WriteLine("Highest placement MECH");
+                }
+                else if (MECH == MET)
+                {
+                    Console.WriteLine("Highest placement CS");
+                    Console.WriteLine("Highest placement MECH");
+                    Console.WriteLine("Highest placement MET");
+                }
+                else
+                {
+                    Console.WriteLine("Highest placement MET");
+                }
+            }
+    }
+    
+    
+}
 
