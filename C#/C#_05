@@ -1,1 +1,45 @@
+using System;
+public class CC	
+	{
+	    public static double GetGrossPay(int hr_Worked)
+		{
+		    double grossPay;
+			if(hr_Worked < 56)
+				grossPay = hr_Worked * 80;
+			else
+			{
+				int extraHours = hr_Worked - 56;
+				grossPay = (extraHours * 1.5 * 80) + (hr_Worked * 80);
+			}
+			
+			return grossPay;
+		}
+		public static double CalculateTax(double grossPay)
+		{
+			double deductable_Tax;
+			
+			deductable_Tax = grossPay * 0.02;
+			
+			return deductable_Tax;
+		}
+		public static double CalculateNetPay(int hr_Worked)
+		{
+			double netPay, grossPay, deductable_Tax;
+			
+			grossPay = GetGrossPay(hr_Worked);
+			deductable_Tax = CalculateTax(grossPay);
+			netPay = grossPay - deductable_Tax;
+			
+			return netPay;
+		}
+		public static void Main(string[] args)		
+		{
+			Console.WriteLine("Enter the number of hours worked");
+			int hr_Worked = int.Parse(Console.ReadLine());
+			double netpay=CalculateNetPay(hr_Worked);
+			Console.WriteLine($"The calculated Net pay is ${netpay}");
+		}
+	}
+
+
 
