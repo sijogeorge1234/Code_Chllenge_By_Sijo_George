@@ -1,1 +1,36 @@
-
+use test;
+create table t_patient(
+patient_id varchar(10) primary key,
+patient_name varchar(30),
+gender char(2),
+aliment varchar(20),
+doctor_id int(11)
+);
+create table t_doctor(
+doctor_id int(11) primary key,
+doctor_name varchar(25),
+mobile_no int(11),
+email varchar(30),
+specialization varchar(10),
+fees int(7)
+);
+create table t_hospital(
+available_doctor int(11),
+shift_time varchar(20)
+);
+alter table t_hospital
+add foreign key (available_doctor) references t_doctor(doctor_id);
+insert  into t_doctor values(1, 'sonu', 45, 'pub', 'derma', 2000);
+insert  into t_doctor values(2, 'simon', 44, 'chenb', 'ent', 2000);
+insert  into t_doctor values(3, 'sijo', 78, 'eurb', 'derma', 2000);
+insert  into t_doctor values(4, 'ramu', 89, 'peb', 'neuro', 2000);
+insert  into t_doctor values(5, 'jagu', 89, 'peb', 'ent', 2000);
+select * from t_doctor;
+UPDATE t_doctor
+SET fees =
+	CASE specialization 
+    WHEN 'ent' THEN 350
+    WHEN 'derma' THEN 600
+    ELSE fees
+END
+WHERE doctor_name like 'J%';
