@@ -1,1 +1,30 @@
-
+using System;
+public class CC
+{
+     public static void headerMeaasge(string company_name)
+        {
+            Console.WriteLine(company_name + " Employee Information");
+        }
+     public static void footerMessage(int year)
+        {
+            Console.WriteLine("Copyright " + year);
+            Console.WriteLine("All Rights Reserved.");
+        }
+    public static void Main(String[] Args)
+    {
+        Console.WriteLine("Enter the Company Name");
+        string company_name = Console.ReadLine();
+        Console.WriteLine("Enter the Employee Name");
+        string employee_name = Console.ReadLine();
+        Console.WriteLine("Enter the Project Name");
+        string project_name = Console.ReadLine();
+        Console.WriteLine("Enter the Year");
+        int year = Convert.ToInt32(Console.ReadLine());
+        headerMeaasge(company_name);
+        Console.WriteLine(employee_name);
+        Console.WriteLine(project_name);
+        footerMessage(year);
+    }
+    
+    
+}
