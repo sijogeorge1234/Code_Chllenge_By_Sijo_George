@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DateEx1              //DO NOT CHANGE the namespace name
+namespace DateEx1              
 {
-    public class Program       //DO NOT CHANGE the class name
+    public class Program       
     {
-        public static void Main(string[] args)    //DO NOT CHANGE the 'Main' method signature
+        public static void Main(string[] args)    
         {
             Console.WriteLine("Enter the date of birth (dd-mm-yyyy): ");
             //Implement code here
