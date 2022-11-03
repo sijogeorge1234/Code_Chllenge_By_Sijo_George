@@ -1,1 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hands_on
+{
+    internal class _5
+    {
+        static void total(int pizza, int puffs, int pepsi)
+        {
+            int r_pizza = 200, r_puffs = 40, r_pepsi = 120;
+            double GST, CESS, sum = 0;
+            pizza = pizza * r_pizza;
+            puffs = puffs * r_puffs;
+            pepsi = pepsi * r_pepsi;
+            sum = pizza + pepsi + puffs;
+            GST = 0.12 * sum;
+            CESS = 0.05 * sum;
+            Console.WriteLine($"Cost of Pizza : {pizza}");
+            Console.WriteLine($"Cost of Puffs : {puffs}");
+            Console.WriteLine($"Cost of Pepsi : {pepsi}");
+            Console.WriteLine($"GST 12% : {GST}");
+            Console.WriteLine($"CESS 5% : {CESS}");
+            sum = sum + GST + CESS;
+            Console.WriteLine($"Total : {sum}");
+        }
+        static void Main(String[] Args)
+        {
+            int pizza, puffs, pepsi;
+            Console.WriteLine("Enter the number of pizzas bought :");
+            pizza = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of puffs bought :");
+            puffs = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of pepsi bought :");
+            pepsi = int.Parse(Console.ReadLine());
+            total(pizza, puffs, pepsi);
+
+        }
+    }
+}
 
