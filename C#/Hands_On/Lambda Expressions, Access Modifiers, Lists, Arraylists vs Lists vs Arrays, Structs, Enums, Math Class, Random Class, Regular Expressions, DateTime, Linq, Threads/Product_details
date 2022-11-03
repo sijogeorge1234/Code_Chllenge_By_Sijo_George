@@ -10,7 +10,7 @@ public class Product
     public DateTime _purchaseDate;
     public double _cost;
 
-    // Implement 4-Argument Constructor
+    
     public Product(string _productName, string _serialNumber, DateTime _purchaseDate, double _cost)
     {
         this._productName = _productName;
@@ -19,7 +19,7 @@ public class Product
         this._cost = _cost;
     }
 
-    // Implement Properties
+   
     public string ProductName
     {
         set { this._productName = value; }
@@ -57,12 +57,12 @@ using System.Globalization;
 using System.IO;
 
 
-public class Program  //DO NOT CHANGE the name of class 'Program'
+public class Program  
 {
-    public static void Main(string[] args) //DO NOT CHANGE 'Main' Signature
+    public static void Main(string[] args) 
     {
 
-        //Fill the code here
+        
         StreamReader reader = new StreamReader("input.csv");
         string data = "";
         Product p = null;
