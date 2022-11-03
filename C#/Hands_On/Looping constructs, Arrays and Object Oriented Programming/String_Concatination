@@ -1,1 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hands_on2
+{
+    internal class concat
+    {
+        static void Main(String[] Args)
+        {
+            Console.WriteLine("Enter the First name:");
+            string First_name = Console.ReadLine();
+            Console.WriteLine("Enter the Last name:");
+            string Last_name = Console.ReadLine();
+            string Full_name = string.Concat(First_name, " ", Last_name);
+            Console.WriteLine(Full_name);
+        }
+
+    }
+}
 
