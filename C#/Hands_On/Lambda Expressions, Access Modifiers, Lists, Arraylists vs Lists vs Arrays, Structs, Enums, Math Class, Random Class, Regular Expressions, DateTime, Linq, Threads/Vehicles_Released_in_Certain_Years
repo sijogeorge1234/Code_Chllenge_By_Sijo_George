@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace LinqApp1                //DO NOT CHANGE the namespace name
+namespace Linq               
 {
 
-    public class Program         //DO NOT CHANGE the class name
+    public class Program         
     {
-        /* DO NOT CHANGE this 'List' declaration with initialized values  */
+        
         public static List<Vehicle> VehicleList = new List<Vehicle>()
                                 {
                                     new Vehicle("HO345","CRV","Honda",2015),
@@ -24,7 +24,7 @@ namespace LinqApp1                //DO NOT CHANGE the namespace name
 
                                 };
 
-        static void Main(string[] args)   //DO NOT Change this 'Main' signature
+        static void Main(string[] args)   
         {
             //Implement your code here
             Console.WriteLine("Enter From Year:");
@@ -43,7 +43,7 @@ namespace LinqApp1                //DO NOT CHANGE the namespace name
         }
 
 
-        /* DO NOT CHANGE this ParameterExpression */
+        
         public static ParameterExpression variableExpr = Expression.Variable(typeof(IEnumerable<Vehicle>), "sampleVar");
 
         public static Expression GetMyExpression(int fromYear, int toYear)
