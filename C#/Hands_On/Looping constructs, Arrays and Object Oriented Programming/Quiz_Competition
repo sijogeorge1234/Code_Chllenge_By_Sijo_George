@@ -1,1 +1,47 @@
+using System;
+
+
+class Quiz
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Enter the number of teams");
+        int numTeams = Convert.ToInt32(Console.ReadLine());
+
+        int[][] scores;
+        scores = new int[numTeams][];
+
+        for (int i = 0; i < numTeams; i++)
+        {
+            Console.WriteLine("No.of attempts for team " + (i + 1) + ":");
+            int attempts = Convert.ToInt32(Console.ReadLine());
+            scores[i] = new int[attempts];
+        }
+
+        for (int i = 0; i < numTeams; i++)
+        {
+            Console.WriteLine("Enter the score for team " + (i + 1) + ":");
+            for (int j = 0; j < scores[i].Length; j++)
+            {
+                int score = Convert.ToInt32(Console.ReadLine());
+                scores[i][j] = score;
+            }
+        }
+
+        for (int i = 0; i < numTeams; i++)
+        {
+            int total = 0;
+
+            for (int j = 0; j < scores[i].Length; j++)
+            {
+                total = total + scores[i][j];
+            }
+            Console.WriteLine("Team " + (i + 1) + " Total Score is " + total + ".");
+        }
+    }
+}
+
+
+
 
