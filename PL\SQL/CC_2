@@ -1,1 +1,6 @@
-
+create or replace trigger backup_trigger
+after insert or delete or update on part
+for each row 
+begin
+insert into part values(:part_no,:sys.date);
+end;
