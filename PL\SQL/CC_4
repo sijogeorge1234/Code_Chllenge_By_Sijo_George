@@ -1,1 +1,8 @@
+ set serverout on;
+ begin
+ for I in (select * from part)
+ loop
+ DBMS_output.put_line('value of Part_name:' || i.part_name);
+ end loop;
+ end;
 
