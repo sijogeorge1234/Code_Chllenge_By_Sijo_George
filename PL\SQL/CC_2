@@ -1,6 +1,16 @@
+create table Back_up(
+part_no number(6),
+part_name varchar(20),
+modify_date date);
+
+
 create or replace trigger backup_trigger
-after insert or delete or update on part
-for each row 
+After insert or update or delete  on part
+for each row
+declare 
+cursor c is select * from part;
 begin
-insert into part values(:part_no,:sys.date);
+if updating then
+insert into Back_up values(:new.part_no,:new.part_price,sysdate);
+end if;
 end;
