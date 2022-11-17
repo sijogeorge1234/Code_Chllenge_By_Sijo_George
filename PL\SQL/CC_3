@@ -1,1 +1,13 @@
-
+create or replace procedure Q3
+ is
+ cursor sh is select * from part;
+ DET sh%rowtype;
+ begin
+ open sh;
+ loop
+ fetch sh into DET;
+ if DET.in_stock<16 then
+ update part set part_price=250;
+ end if;
+ end loop;
+ end;
