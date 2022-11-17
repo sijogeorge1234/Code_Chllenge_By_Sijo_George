@@ -1,1 +1,25 @@
+create table Part( 
+part_no number(6),
+part_name varchar2(20),
+in_stock varchar(10),
+part_price number(6,2),
+part_desc varchar2(50)
+);
+insert into part values(1,'C',20,210,'W');
+insert into part values(2,'F',21,200,'Y');
+insert into part values(3,'K',10,220,'L');
+insert into part values(4,'Z',15,230,'M');
 
+create or replace procedure Q1(I in number)
+is
+cursor sh is select * from part where part_no=1;
+DET sh%rowtype;
+begin
+open sh;
+loop
+fetch sh into DET;
+exit when sh%notfound;
+DBMS_output.put_line(DET.part_no|| '  ' || DET.part_name|| '  '||
+DET.in_stock|| '  '||DET.part_price||' ' || DET.part_desc);
+end loop;
+end;
